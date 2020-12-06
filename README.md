@@ -398,7 +398,7 @@ $ sudo systcl -w vm.swappiness=100 #giá trị thay đổi từ 0 đến 100, m�
 
 
 
-$ sudo systcl -w vm.vfs_cache_pressure=200 #giá trị thay đổi từ 0 đến 500, mặc định là 100
+$ sudo systcl -w vm.vfs_cache_pressure=100 #giá trị thay đổi từ 0 đến 500, mặc định là 100
 
 
 
@@ -444,7 +444,7 @@ $ nano /etc/sysctl.conf
 
 vm.swappiness=100
 
-vm.vfs_cache_pressure=200
+vm.vfs_cache_pressure=100
 
 vm.min_free_kbytes=32768
 
@@ -646,9 +646,9 @@ echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
 
 
 
-# Reduce the boost powersave_bias to 100 for minimum processor frequency
+# Reduce the boost powersave_bias to 300 for minimum processor frequency
 
-echo 100 > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias
+echo 300 > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias
 
 
 
@@ -658,9 +658,9 @@ echo 4 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 
 
 
-# Reduce the boost sampling_rate to 100000 for battery life
+# Reduce the boost sampling_rate to 120000 for battery life
 
-echo 100000 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
+echo 120000 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 
 
 
