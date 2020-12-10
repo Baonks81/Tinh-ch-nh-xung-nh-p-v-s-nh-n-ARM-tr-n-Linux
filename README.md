@@ -398,11 +398,11 @@ $ sudo systcl -w vm.swappiness=100 #giá trị thay đổi từ 0 đến 100, m�
 
 
 
-$ sudo systcl -w vm.vfs_cache_pressure=100 #giá trị thay đổi từ 0 đến 500, mặc định là 100
+$ sudo systcl -w vm.vfs_cache_pressure=200 #giá trị thay đổi từ 0 đến 500, mặc định là 100
 
 
 
-$ sudo sysctl -w vm.dirty_background_ratio=10 #giá trị thay đổi từ 1 đến 10, mặc định là 10
+$ sudo sysctl -w vm.dirty_background_ratio=3 #giá trị thay đổi từ 1 đến 10, mặc định là 10
 
 
 
@@ -444,7 +444,7 @@ $ nano /etc/sysctl.conf
 
 vm.swappiness=100
 
-vm.vfs_cache_pressure=100
+vm.vfs_cache_pressure=200
 
 vm.min_free_kbytes=32768
 
@@ -452,7 +452,7 @@ vm.dirty_background_bytes=16777216
 
 vm.dirty_bytes=33554432
 
-vm.dirty_background_ratio=10
+vm.dirty_background_ratio=3
 
 vm.dirty_ratio=30
 
@@ -486,13 +486,13 @@ kernel.sched_child_runs_first=1
 
 kernel.sched_tunable_scaling=0
 
-kernel.sched_latency_ns=4000000
+kernel.sched_latency_ns=1000000
 
-kernel.sched_min_granularity_ns=500000
+kernel.sched_min_granularity_ns=100000
 
-kernel.sched_nr_migrate=32
+kernel.sched_nr_migrate=4
 
-kernel.sched_wakeup_granularity_ns=2000000
+kernel.sched_wakeup_granularity_ns=500000
 
 net.ipv4.tcp_ecn=1
 
@@ -588,9 +588,9 @@ echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
 
 
 
-# Reduce the boost powersave_bias to 300
+# Reduce the boost powersave_bias to 0
 
-echo 300 > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias
+echo 0 > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias
 
 
 
@@ -628,9 +628,9 @@ done
 
 
 
-# Reduce the boost threshold to 95%
+# Reduce the boost threshold to 85%
 
-echo 95 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
+echo 85 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
 
 
 
@@ -646,9 +646,9 @@ echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
 
 
 
-# Reduce the boost powersave_bias to 300 for minimum processor frequency
+# Reduce the boost powersave_bias to 0 for minimum processor frequency
 
-echo 300 > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias
+echo 0 > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias
 
 
 
@@ -658,9 +658,9 @@ echo 4 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 
 
 
-# Reduce the boost sampling_rate to 120000 for battery life
+# Reduce the boost sampling_rate to 100000 for battery life
 
-echo 120000 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
+echo 100000 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 
 
 
