@@ -570,9 +570,9 @@ done
 
 
 
-# Reduce the boost threshold to 90%
+# Reduce the boost threshold to 95%
 
-echo 90 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
+echo 95 > /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
 
 
 
@@ -600,9 +600,9 @@ echo 2 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
 
 
 
-# Reduce the boost sampling_rate to 20000
+# Reduce the boost sampling_rate to 30000
 
-echo 20000 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
+echo 30000 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 
 
 
