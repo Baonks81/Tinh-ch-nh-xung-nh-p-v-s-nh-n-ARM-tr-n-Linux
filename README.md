@@ -588,9 +588,9 @@ echo 0 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
 
 
 
-# Reduce the boost powersave_bias to 300
+# Reduce the boost powersave_bias to 350
 
-echo 300 > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias
+echo 350 > /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias
 
 
 
